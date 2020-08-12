@@ -1,0 +1,15 @@
+.listItem {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #bbb;
+  text-decoration: none;
+  color: #000000;
+  align-items: center;
+}
+
+.listItem > * {
+  margin-right: 15px;
+}
+.listItem > :flast-child {
+  margin-right: 0px;
+}
