@@ -1,1 +1,45 @@
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
 
+.app > * {
+  flex-basis: 100%;
+}
+
+.app header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: var(--bg-gradient-light);
+}
+
+.title {
+  margin: 8px auto;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.app header input {
+  border-radius: 150px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+.app main {
+  background: var(--bg-color);
+  padding: 10px;
+}
+
+.colorful-border {
+  border-style: solid;
+  border-image-slice: 1;
+  border-width: 5px 0;
+  border-image-source: var(--bg-gradient);
+}
+
+.app footer {
+  background: var(--bg-gradient-light);
+}
