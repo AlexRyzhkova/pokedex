@@ -9,6 +9,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Pokemons from "./pages/Pokemons";
+import Pokemon from "./pages/Pokemon";
 
 // function waitFor(time) {
 //   return new Promise((resolve) => setTimeout(resolve, time));
@@ -21,9 +22,11 @@ function App() {
       <div className="app">
         <Switch>
           <Route path="/pokemons/:name">
+            <Pokemon />
+          </Route>
+          <Route path="/pokemons">
             <Pokemons />
           </Route>
-
           <Route path="/items">ITEMS</Route>
           <Route path="/">
             <Redirect to="/pokemons" />
