@@ -10,7 +10,7 @@ function Pokemons() {
   // React.Useatete setzt den ersten wert auf null
   const [pokemons, setPokemons] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
-  // const [query, setQuery] = useState("");
+  const [query, setQuery] = React.useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -26,18 +26,23 @@ function Pokemons() {
     return <LoadingScreen />;
   }
 
-  // const filteredPokemons = pokemons.filter((pokemon) => {
-  //     return pokemon.name.toLowerCase().startsWith(query.toLowerCase());
-  //   });
+  const filteredPokemons = pokemons.filter((pokemon) => {
+    return pokemon.name.toLowerCase().startsWith(query.toLowerCase());
+  });
 
   return (
     <>
       <header>
-        <span className="title">Pokemon</span> <input placeholder="🔎 Search" />
+        <span className="title">Pokemon</span>{" "}
+        <input
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder=" 🔎Enter name"
+        />
       </header>
       <main className="colorful-border">
         <List>
-          {pokemons?.map((pokemon) => (
+          {filteredPokemons?.map((pokemon) => (
             <ListItem key={pokemon.id} href={pokemon.link}>
               <ListItemIcon
                 src={pokemon.imgSrc}
